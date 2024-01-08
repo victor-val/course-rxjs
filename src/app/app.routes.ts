@@ -14,6 +14,7 @@ import { StartWithEndWithComponent } from './pages/12-startwith-endwidth/12-star
 import { DistinctComponent } from './pages/13-distinct-distinctuntilchanged/13-distinct-distinctuntilchanged';
 import { PairwiseComponent } from './pages/14-pairwise/14-pairwise';
 import { ShareComponent } from './pages/15-share/15-share';
+import { SubjectComponent } from './pages/16-subject/16-subject';
 
 export const routes: Routes = [
     { path: '01', component: ObservableCreateComponent },
@@ -31,4 +32,5 @@ export const routes: Routes = [
     { path: '13', component: DistinctComponent },
     { path: '14', component: PairwiseComponent },
     { path: '15', component: ShareComponent },
+    { path: '16', component: SubjectComponent },
   ];
