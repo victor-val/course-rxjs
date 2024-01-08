@@ -4,11 +4,11 @@ import { of, range } from 'rxjs';
 import { displayLog } from '../../shared/display-log';
 
 @Component({
-  selector: 'app-03-from',
+  selector: 'app-04-range-of',
   standalone: true,
   imports: [CommonModule],
   template: `
-    <p>03-from works!</p>
+    <p>04-range-y-of works!</p>
     <div id="log-container"></div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
