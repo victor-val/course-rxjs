@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+#grid{
+    display: none;
+    height: 500px;
+    width: 500px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: #AAA 1px solid;
+    flex-shrink: 0;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4wECDC4GIBN3ygAAALRJREFUeNrt3EERACAIRUF0LED/kETACp5xXwNm519Z3d0xoKqacEbsEBABASIgQAQEiIAAERABASIgQAQEiIAAERABASIgQAQEiIAAERABASIgQAQEiIAAERABASIgQAQEiIAAERABAaLHzpRPbJlpIQICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRECACIiAABEQIAICRED+6gIWHgqTCjDh1wAAAABJRU5ErkJggg==');            
+}
+.navegacion{
+    display: flex;
+}
+.col-nav{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+#scrollable-space{
+    height: 4000px;
+}
+#progress-bar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 0px;
+    height: 12px;
+    background-color: #ff3535;
+}
+
+#footer{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
