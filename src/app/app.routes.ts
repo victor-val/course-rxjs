@@ -7,6 +7,7 @@ import { IntervalTimerComponent } from './pages/05-interval-and-timer/05-interva
 import { FromEventComponent } from './pages/06-from-event/06-from-event';
 import { MaptoMapFilterComponent } from './pages/07-mapto-map-filter/07-mapto-map-filter';
 import { TapComponent } from './pages/08-tap/08-tap';
+import { FirstTakeTakeWhileComponent } from './pages/09-first-take-takewhile/09-first-take-takewhile';
 
 export const routes: Routes = [
     { path: '01', component: ObservableCreateComponent },
@@ -17,4 +18,5 @@ export const routes: Routes = [
     { path: '06', component: FromEventComponent },
     { path: '07', component: MaptoMapFilterComponent },
     { path: '08', component: TapComponent },
+    { path: '09', component: FirstTakeTakeWhileComponent },
   ];
