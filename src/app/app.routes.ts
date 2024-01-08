@@ -10,6 +10,7 @@ import { TapComponent } from './pages/08-tap/08-tap';
 import { FirstTakeTakeWhileComponent } from './pages/09-first-take-takewhile/09-first-take-takewhile';
 import { LastTakelastSkipComponent } from './pages/10-last-takelast-skip/10-last-takelast-skip';
 import { ReduceScanComponent } from './pages/11-reduce-scan/11-reduce-scan';
+import { StartWithEndWithComponent } from './pages/12-startwith-endwidth/12-startwith-endwidth';
 
 export const routes: Routes = [
     { path: '01', component: ObservableCreateComponent },
@@ -23,4 +24,5 @@ export const routes: Routes = [
     { path: '09', component: FirstTakeTakeWhileComponent },
     { path: '10', component: LastTakelastSkipComponent },
     { path: '11', component: ReduceScanComponent },
+    { path: '12', component: StartWithEndWithComponent },
   ];
