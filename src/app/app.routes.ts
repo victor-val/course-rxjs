@@ -11,6 +11,7 @@ import { FirstTakeTakeWhileComponent } from './pages/09-first-take-takewhile/09-
 import { LastTakelastSkipComponent } from './pages/10-last-takelast-skip/10-last-takelast-skip';
 import { ReduceScanComponent } from './pages/11-reduce-scan/11-reduce-scan';
 import { StartWithEndWithComponent } from './pages/12-startwith-endwidth/12-startwith-endwidth';
+import { DistinctComponent } from './pages/13-distinct-distinctuntilchanged/13-distinct-distinctuntilchanged';
 
 export const routes: Routes = [
     { path: '01', component: ObservableCreateComponent },
@@ -25,4 +26,5 @@ export const routes: Routes = [
     { path: '10', component: LastTakelastSkipComponent },
     { path: '11', component: ReduceScanComponent },
     { path: '12', component: StartWithEndWithComponent },
+    { path: '13', component: DistinctComponent },
   ];
