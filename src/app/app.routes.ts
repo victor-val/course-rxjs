@@ -6,6 +6,7 @@ import { RangeOfComponent } from './pages/04-range-y-of/04-range-y-of';
 import { IntervalTimerComponent } from './pages/05-interval-and-timer/05-interval-and-timer';
 import { FromEventComponent } from './pages/06-from-event/06-from-event';
 import { MaptoMapFilterComponent } from './pages/07-mapto-map-filter/07-mapto-map-filter';
+import { TapComponent } from './pages/08-tap/08-tap';
 
 export const routes: Routes = [
     { path: '01', component: ObservableCreateComponent },
@@ -15,4 +16,5 @@ export const routes: Routes = [
     { path: '05', component: IntervalTimerComponent },
     { path: '06', component: FromEventComponent },
     { path: '07', component: MaptoMapFilterComponent },
+    { path: '08', component: TapComponent },
   ];
