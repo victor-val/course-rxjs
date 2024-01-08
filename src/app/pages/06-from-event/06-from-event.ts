@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { fromEvent } from 'rxjs';
+import { Subscription, fromEvent } from 'rxjs';
 import { displayLog } from '../../shared/display-log';
 
 
@@ -16,6 +16,7 @@ import { displayLog } from '../../shared/display-log';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FromEventComponent implements OnInit {
+  subscription = new Subscription();
   ngOnInit() {
     //Reaccionar a eventos de la interfaz
     const actionBtn = document.getElementById('action-btn');
@@ -24,8 +25,12 @@ export class FromEventComponent implements OnInit {
         displayLog(`click event at pos (${evt.x}, ${evt.y})`);
     });
 
-    fromEvent(document, 'mousemove').subscribe(evt => {
+    this.subscription = fromEvent(document, 'mousemove').subscribe(evt => {
         console.log(evt);
     });
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 }
