@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { fromEvent, map, tap, Subscription, pairwise, share, Subject, BehaviorSubject } from 'rxjs';
+import { fromEvent, map, tap, Subscription, pairwise, share, Subject, BehaviorSubject, throttleTime, auditTime, sampleTime } from 'rxjs';
 import { updateDisplay } from '../../shared/display-log';
 
 
 @Component({
-  selector: 'app-16-subject',
+  selector: 'app-17-sampletime-throttletime-audittime',
   standalone: true,
   imports: [CommonModule],
   template: `
-    <p>16-subject works!</p>
+    <p>17-sampletime-throttletime-audittime works!</p>
     <h1>Do some scroll</h1>
     <div id="progress-bar"></div>
     <div id="log-container"></div>
@@ -18,10 +18,9 @@ import { updateDisplay } from '../../shared/display-log';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SubjectComponent implements OnInit {
+export class SampleTimeComponent implements OnInit {
 
   subscription = new Subscription();
-  subscription2 = new Subscription();
 
   ngOnInit() {
     const progressBar = document.getElementById('progress-bar');
@@ -32,13 +31,13 @@ export class SubjectComponent implements OnInit {
 
     //observable that returns scroll (from top) on scroll events
     const scroll$ = fromEvent(document, 'scroll').pipe(
-        map(() => docElement.scrollTop),
-        tap(evt => console.log("[scroll]: ", evt)),
-        pairwise(), //Emite en pareja de datos consecutivos 
-        tap(([previous, current]) =>{
-            updateDisplay(current > previous ? 'DESC' : 'ASC');
-        }),
-        map(([previous, current]) => current)
+      tap(evt => console.log("[scroll event]")),
+      //con estos operadores se limita la frecuencia con la que el observable recibe eventos
+      //sampleTime(50), //se emite la ultima muestra
+      //auditTime(50),
+      throttleTime(50), //se salta eventos
+      map(() => docElement.scrollTop),
+      tap(evt => console.log("[scroll]: ", evt))
     );
 
     //observable that returns the amount of page scroll progress
@@ -49,23 +48,12 @@ export class SubjectComponent implements OnInit {
         })
     )
 
-    //const scrollProgressHot$ = new Subject();
-    const scrollProgressHot$ = new BehaviorSubject(0);
-    scrollProgress$.subscribe(scrollProgressHot$);
-
     //subscribe to scroll progress to paint a progress bar
-    this.subscription = scrollProgressHot$.subscribe(updateProgressBar); // ahora se subscriben al subject
+    this.subscription = scrollProgress$.subscribe(updateProgressBar);
 
-    this.subscription2 = scrollProgressHot$.subscribe(
-      (val: any) => updateDisplay(`${ Math.floor(val) } %`)
-    );
-
-    console.log("scroll initial state: ", scrollProgressHot$.value); 
-    // se puede saber el valor del behaviorsubject en cualquier momento, guarda el ultimo evento emitido
   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
-    this.subscription2.unsubscribe();
   }
 }
