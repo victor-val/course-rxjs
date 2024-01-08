@@ -13,6 +13,7 @@ import { ReduceScanComponent } from './pages/11-reduce-scan/11-reduce-scan';
 import { StartWithEndWithComponent } from './pages/12-startwith-endwidth/12-startwith-endwidth';
 import { DistinctComponent } from './pages/13-distinct-distinctuntilchanged/13-distinct-distinctuntilchanged';
 import { PairwiseComponent } from './pages/14-pairwise/14-pairwise';
+import { ShareComponent } from './pages/15-share/15-share';
 
 export const routes: Routes = [
     { path: '01', component: ObservableCreateComponent },
@@ -29,4 +30,5 @@ export const routes: Routes = [
     { path: '12', component: StartWithEndWithComponent },
     { path: '13', component: DistinctComponent },
     { path: '14', component: PairwiseComponent },
+    { path: '15', component: ShareComponent },
   ];

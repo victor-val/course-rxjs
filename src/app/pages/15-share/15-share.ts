@@ -1,15 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { fromEvent, map, tap, Subscription, pairwise } from 'rxjs';
+import { fromEvent, map, tap, Subscription, pairwise, share } from 'rxjs';
 import { updateDisplay } from '../../shared/display-log';
 
 
 @Component({
-  selector: 'app-14-pairwise',
+  selector: 'app-15-share',
   standalone: true,
   imports: [CommonModule],
   template: `
-    <p>14-pairwise works!</p>
+    <p>15-share works!</p>
     <h1>Do some scroll</h1>
     <div id="progress-bar"></div>
     <div id="log-container"></div>
@@ -18,9 +18,11 @@ import { updateDisplay } from '../../shared/display-log';
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PairwiseComponent implements OnInit {
+export class ShareComponent implements OnInit {
 
   subscription = new Subscription();
+  subscription2 = new Subscription();
+
   ngOnInit() {
     const progressBar = document.getElementById('progress-bar');
     const docElement = document.documentElement;
@@ -44,14 +46,23 @@ export class PairwiseComponent implements OnInit {
         map(evt => {
             const docHeight = docElement.scrollHeight - docElement.clientHeight;
             return (evt / docHeight) * 100;
-        })
+        }),
+        share()
     )
 
     //subscribe to scroll progress to paint a progress bar
     this.subscription = scrollProgress$.subscribe(updateProgressBar);
+
+    this.subscription2 = scrollProgress$.subscribe(
+      val => updateDisplay(`${ Math.floor(val) } %`)
+    );
+
+    //share -> comparte el mismo flujo
+    //Aqui hay dos subscripciones a lo mismo y se esta mostrando en la consola el log repetido
   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+    this.subscription2.unsubscribe();
   }
 }

@@ -16,9 +16,17 @@
     flex-direction: column;
     width: 50%;
 }
+
+#log-container{
+    position: fixed;
+    top: 40px;
+    right: 20px;
+}
+
 #scrollable-space{
     height: 4000px;
 }
+
 #progress-bar {
     position: fixed;
     top: 0px;
