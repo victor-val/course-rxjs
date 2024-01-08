@@ -9,6 +9,7 @@ import { MaptoMapFilterComponent } from './pages/07-mapto-map-filter/07-mapto-ma
 import { TapComponent } from './pages/08-tap/08-tap';
 import { FirstTakeTakeWhileComponent } from './pages/09-first-take-takewhile/09-first-take-takewhile';
 import { LastTakelastSkipComponent } from './pages/10-last-takelast-skip/10-last-takelast-skip';
+import { ReduceScanComponent } from './pages/11-reduce-scan/11-reduce-scan';
 
 export const routes: Routes = [
     { path: '01', component: ObservableCreateComponent },
@@ -21,4 +22,5 @@ export const routes: Routes = [
     { path: '08', component: TapComponent },
     { path: '09', component: FirstTakeTakeWhileComponent },
     { path: '10', component: LastTakelastSkipComponent },
+    { path: '11', component: ReduceScanComponent },
   ];
