@@ -20,6 +20,7 @@ import { DelayComponent } from './pages/18-delay-buffer-time/18-delay-buffer-tim
 import { DebouncetimeComponent } from './pages/19-debouncetime/19-debouncetime';
 import { ZipMergeComponent } from './pages/20-zip-merge/20-zip-merge';
 import { ConcatComponent } from './pages/21-concat-forkjoin/21-concat-forkjoin';
+import { CombineLatestComponent } from './pages/22-combinelatest-withlatestfrom/22-combinelatest-withlatestfrom';
 
 export const routes: Routes = [
     { path: '01', component: ObservableCreateComponent },
@@ -43,6 +44,6 @@ export const routes: Routes = [
     { path: '19', component: DebouncetimeComponent },
     { path: '20', component: ZipMergeComponent },
     { path: '21', component: ConcatComponent },
-
+    { path: '22', component: CombineLatestComponent },
 
   ];
