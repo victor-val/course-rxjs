@@ -42,3 +42,9 @@
     text-align: center;
     margin-bottom: 40px;
 }
+
+#drawboard{
+    position:absolute;
+    left:40px;
+    border:2px solid;
+  }

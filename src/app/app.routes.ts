@@ -18,6 +18,7 @@ import { SubjectComponent } from './pages/16-subject/16-subject';
 import { SampleTimeComponent } from './pages/17-sampletime-throttletime-audittime/17-sampletime-throttletime-audittime';
 import { DelayComponent } from './pages/18-delay-buffer-time/18-delay-buffer-time';
 import { DebouncetimeComponent } from './pages/19-debouncetime/19-debouncetime';
+import { ZipMergeComponent } from './pages/20-zip-merge/20-zip-merge';
 
 export const routes: Routes = [
     { path: '01', component: ObservableCreateComponent },
@@ -39,4 +40,6 @@ export const routes: Routes = [
     { path: '17', component: SampleTimeComponent },
     { path: '18', component: DelayComponent },
     { path: '19', component: DebouncetimeComponent },
+    { path: '20', component: ZipMergeComponent },
+
   ];
